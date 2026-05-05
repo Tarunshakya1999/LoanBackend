@@ -80,13 +80,13 @@ class ShopkeeperProfileAdmin(admin.ModelAdmin):
 
     # ── Bulk actions ──────────────────────────────────────────────────────────
 
-    @admin.action(description='✅ Activate Monthly (₹399) for selected')
+    @admin.action(description='✅ Activate Monthly (₹99) for selected')
     def action_activate_monthly(self, request, queryset):
         for profile in queryset:
             profile.activate_monthly()
         self.message_user(request, f'{queryset.count()} users ko Monthly plan activate kiya gaya.')
 
-    @admin.action(description='⭐ Activate Yearly (₹4999) for selected')
+    @admin.action(description='⭐ Activate Yearly (₹999) for selected')
     def action_activate_yearly(self, request, queryset):
         for profile in queryset:
             profile.activate_yearly()
